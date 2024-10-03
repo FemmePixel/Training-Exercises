@@ -1,0 +1,98 @@
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Type Selectors */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+h1, h2 {
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Class and ID Selectors */
+.section-title {
+    color: #007BFF;
+}
+
+#class-id-paragraph {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Attribute Selectors */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+a[target="_blank"] {
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+/* Descendant, Child, Adjacent Sibling, and General Sibling Selectors */
+.parent p {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.parent > p {
+    border-left: 5px solid #007BFF;
+}
+
+.siblings .adjacent-sibling + .general-sibling {
+    background-color: #f8d7da;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.siblings .first-sibling ~ .general-sibling {
+    background-color: #d4edda;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

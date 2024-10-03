@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .relative-container {
+            position: relative;
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        .draggable-box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            cursor: grab;
+        }
+        .fixed-container {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+        }
+        .draggable-fixed-box {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+            cursor: grab;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Draggable Exercises</header>
+
+    <div class="relative-container">
+        <div class="draggable-box" id="draggableBox1">Drag Me Within Box</div>
+    </div>
+
+    <div class="fixed-container">
+        <div class="draggable-fixed-box" id="draggableBox2">Drag Me Within Window</div>
+    </div>
+
+    <footer>© 2024 Draggable Divs Exercise</footer>
+
+    <script>
+        function makeDraggable(draggableElement, containerElement) {
+            draggableElement.onmousedown = function(event) {
+                let shiftX = event.clientX - draggableElement.getBoundingClientRect().left;
+                let shiftY = event.clientY - draggableElement.getBoundingClientRect().top;
+
+                function moveAt(pageX, pageY) {
+                    let newX = pageX - shiftX;
+                    let newY = pageY - shiftY;
+
+                    if (containerElement) {
+                        let containerRect = containerElement.getBoundingClientRect();
+                        let elementRect = draggableElement.getBoundingClientRect();
+
+                        newX = Math.max(containerRect.left, Math.min(newX, containerRect.right - elementRect.width));
+                        newY = Math.max(containerRect.top, Math.min(newY, containerRect.bottom - elementRect.height));
+                    }
+
+                    draggableElement.style.left = newX + 'px';
+                    draggableElement.style.top = newY + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX, event.pageY);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+
+                document.onmouseup = function() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    draggableElement.onmouseup = null;
+                };
+            };
+
+            draggableElement.ondragstart = function() {
+                return false;
+            };
+        }
+
+        makeDraggable(document.getElementById('draggableBox1'), document.querySelector('.relative-container'));
+        makeDraggable(document.getElementById('draggableBox2'), null);
+    </script>
+
+</body>
+</html>

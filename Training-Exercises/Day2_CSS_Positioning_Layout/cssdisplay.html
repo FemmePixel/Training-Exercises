@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Types Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin: 20px;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        .block-elements div {
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+        .inline-elements span {
+            background-color: #f44336;
+            color: white;
+            margin-right: 10px;
+            padding: 10px;
+        }
+        .inline-block-elements div {
+            background-color: #FF9800;
+            color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Display Types Exercise</h1>
+        <nav>
+            <a href="#block">Block Elements</a>
+            <a href="#inline">Inline Elements</a>
+            <a href="#inline-block">Inline-Block Elements</a>
+        </nav>
+    </header>
+
+    <section id="block" class="block-elements">
+        <h2>Block Elements</h2>
+        <div>Block Element 1</div>
+        <div>Block Element 2</div>
+        <div>Block Element 3</div>
+    </section>
+
+    <section id="inline" class="inline-elements">
+        <h2>Inline Elements</h2>
+        <span>Inline Element 1</span>
+        <span>Inline Element 2</span>
+        <span>Inline Element 3</span>
+    </section>
+
+    <section id="inline-block" class="inline-block-elements">
+        <h2>Inline-Block Elements</h2>
+        <div>Inline-Block 1</div>
+        <div>Inline-Block 2</div>
+        <div>Inline-Block 3</div>
+    </section>
+
+    <footer>© 2024 Display Types Exercise</footer>
+
+</body>
+</html>
