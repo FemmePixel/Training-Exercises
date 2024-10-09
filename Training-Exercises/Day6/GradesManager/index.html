@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="number"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .student-list {
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        #average {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grade Manager</h1>
+        <form id="gradeForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+            <br><br>
+            <label for="grade">Grade:</label>
+            <input type="number" id="grade" name="grade" placeholder="Enter grade (1-100)" required min="1" max="100">
+            <br><br>
+            <input type="submit" value="Add Student">
+        </form>
+        <p id="error" class="error"></p>
+        <div class="student-list" id="studentList">
+            <h3>Grades List</h3>
+            <ul id="list"></ul>
+            <p id="average"></p>
+        </div>
+    </div>
+    <script>
+       
+    </script>
+</body>
+</html>
